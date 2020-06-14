@@ -61,7 +61,13 @@
             </div>
             
             <div class="content">
-                <img src="img/slider/image 10.png" alt="">
+                <img class="mySlides" src="img/slider/image 10.png" style="width:100%">
+                <img class="mySlides" src="img/slider/image 9.png" style="width:100%">
+                <img class="mySlides" src="img/slider/image 8.png" style="width:100%">
+                <img class="mySlides" src="img/slider/image 7.png" style="width:100%">  
+                <img class="mySlides" src="img/slider/image 6.png" style="width:100%">
+                <img class="mySlides" src="img/slider/image 5.png" style="width:100%">
+                <img class="mySlides" src="img/slider/image 4.png" style="width:100%">
             </div>
 
 
@@ -611,7 +617,24 @@
     </footer>
 
 
+    <script>
 
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 1000); // Change image every 1 seconds
+        }
+        
+    </script>
 
 
 
